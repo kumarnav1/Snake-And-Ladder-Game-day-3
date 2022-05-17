@@ -10,10 +10,12 @@ public class SnakeAndLadder {
     public static void main(String[] args) {
         System.out.println("Welcome to Snake and Ladder Game.");
         int playerStartPosition = 0;
+        int counterForRolling = 0;
         while (playerStartPosition < WINNING_POSITION) {
             int numberAfterRolling = (int) Math.floor(Math.random() * 10) % 6 + 1;
             System.out.println("Number after rolling the dice by the player: " + numberAfterRolling);
             int checkOptions = (int) Math.floor(Math.random() * 10) % 3;
+            ++counterForRolling;
             switch (checkOptions) {
                 case NO_PLAY:
                     System.out.println("Player is not playing therefore stays in the same position");
@@ -31,5 +33,6 @@ public class SnakeAndLadder {
                     System.out.println("Player got snake bite and got behind then position is: " + playerStartPosition);
             }
         }
+        System.out.println("Number of times dice was thrown by the players: " + counterForRolling);
     }
 }
